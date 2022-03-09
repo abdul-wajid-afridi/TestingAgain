@@ -1,0 +1,51 @@
+nav {
+  @apply flex justify-between items-center px-4 h-20 relative bg-gray-200;
+}
+.logo__container {
+  @apply flex;
+}
+.menu {
+  @apply flex gap-10;
+}
+nav ul li {
+  @apply text-gray-600 font-bold tracking-wider capitalize cursor-pointer hover:text-black;
+}
+
+.navbar__icon {
+  display: none;
+}
+.navbar__bar,
+.navbar__time {
+  @apply text-4xl text-white shadow-md shadow-black bg-gray-400 rounded-md p-1;
+}
+.logo__amazon {
+  animation: logo 0.8s infinite alternate;
+  @apply text-3xl bg-clip-text bg-gradient-to-b from-gray-800 to-orange-500;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .navbar__icon {
+    display: flex;
+  }
+  .logo__container {
+    @apply flex justify-between w-full;
+  }
+
+  .menu {
+    left: 0;
+    @apply flex flex-col items-center  bg-gray-200 w-full h-[90vh] mt-10 absolute left-0;
+  }
+  .menu.active {
+    left: -100%;
+  }
+}
+
+@keyframes logo {
+  from {
+    transform: rotate(-30deg);
+  }
+  to {
+    transform: rotate(60deg);
+  }
+}
